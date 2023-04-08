@@ -10,7 +10,7 @@ void print_with_newline(char *string)
 	if (*string)
 	{
 		_putchar(*string);
-		_print_with_new_line(string + 1);
+		_print_with_newline(string + 1);
 	}
 	else
 		_putchar('\n');
