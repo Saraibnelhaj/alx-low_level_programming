@@ -25,7 +25,7 @@
 *_sqrt_recursion - Returns the natural square root of a number
 *@n: the number to calculate the square root
 *
-*Return : the natural square root of n or -1 if n doesn't have a 
+*Return: the natural square root of n or -1 if n doesn't have a
 * natural square root
 * If n is negative, returns -1.
 */
