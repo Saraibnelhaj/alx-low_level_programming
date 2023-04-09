@@ -5,7 +5,7 @@
  *
  * Return: The factorial of the number, or -1 if an error occured
  */
-int factorial(int n);
+int factorial(int n)
 {
 	if (n < 0)
 		return (-1);
