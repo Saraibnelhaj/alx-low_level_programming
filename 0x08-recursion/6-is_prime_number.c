@@ -12,10 +12,10 @@ int is_prime_number(int n)
 
 	if (n <= 1)
 		return (0);
-	if (n <= 3)
+	else if (n <= 3)
 		return (1);
 	/*chekc if the number is divisible by 2 or 3 */
-	if (n % 2 == 0 || n % 3 == 0)
+	else if (n % 2 == 0 || n % 3 == 0)
 		return (0);
 	/* chekc if the number is divisible by any number greater than 3*/
 	while (i * i <= n)
