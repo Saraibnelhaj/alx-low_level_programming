@@ -8,6 +8,8 @@
  */
 int is_prime_number(int n)
 {
+	int i = 5;
+
 	if (n <= 1)
 		return (0);
 	if (n <= 3)
@@ -16,8 +18,6 @@ int is_prime_number(int n)
 	if (n % 2 == 0 || n % 3 == 0)
 		return (0);
 	/* chekc if the number is divisible by any number greater than 3*/
-	int i = 5;
-
 	while (i * i <= n)
 	{
 		if (n % i == 0 || n % (i + 2) == 0)
