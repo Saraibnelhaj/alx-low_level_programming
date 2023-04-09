@@ -1,21 +1,39 @@
 #include "main.h"
 /**
+*_sqrt_helper - recursively finds the natural square root
+*@n: the number to find the square root of
+*@i: the candidate square root
+*
+*Return: the natural square root of n or -1 if n does not have a square root
+*/
+	int _sqrt_helper(int n, int i)
+{
+	if (i * i == n)
+	{
+		return (i);
+	}
+	else if (i * i > n)
+	{
+		return (-1);
+	}
+	else
+	{
+	return (_sqrt_helper(n, i + 1));
+	}
+}
+/**
 *_sqrt_recursion - Returns the natural square root of a number
 *@n: the number to calculate the square root
 *
-*Return : the square root of n or -1 if n doesn't have a square root
+*Return : the natural square root of n or -1 if n doesn't have a 
+* natural square root
+* If n is negative, returns -1.
 */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-	if (n == 0 || n == 1)
-		return (n);
-
-	int i = 1;
-
-	while (i * i < n)
-		return (i);
-	else
-		return (-1);
+if (n < 0)
+{
+return (-1);
+}
+return (_sqrt_helper(n, 0));
 }
