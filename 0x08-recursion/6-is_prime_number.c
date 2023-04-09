@@ -8,18 +8,22 @@
  */
 int is_prime_number(int n)
 {
-	int i;
-	if (n < 2)
+	if (n <= 1)
 		return (0);
-	if (n == 2 || n == 3)
+	if (n <= 3)
 		return (1);
+	/*chekc if the number is divisible by 2 or 3 */
 	if (n % 2 == 0 || n % 3 == 0)
 		return (0);
+	/* chekc if the number is divisible by any number greater than 3*/
+	int i = 5;
 
-	for (i = 5; i * i <= n; i += 6)
+	while (i * i <= n)
 	{
 		if (n % i == 0 || n % (i + 2) == 0)
 			return (0);
+
+		i += 6;
 	}
 	return (1);
 }
