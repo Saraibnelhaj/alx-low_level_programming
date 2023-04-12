@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-*_strdup - returns a pointer to a newly allocated space in memory 
+*_strdup - returns a pointer to a newly allocated space in memory
 *containing a copy of the string given as a parameter .
-*@str: string to duplicate 
+*@str: string to duplicate
 *
-*Return: pointer to duplicated string or NULL if insufficient memory 
+*Return: pointer to duplicated string or NULL if insufficient memory
 *was available
 */
 char *_strdup(char *str)
