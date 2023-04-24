@@ -2,9 +2,9 @@
 #include <string.h>
 #include "main.h"
 /**
- *_realloc - reallocates a memory block using maloc and free 
+ *_realloc - reallocates a memory block using maloc and free
  *@ptr: pointer to the memory previously allocated with malloc
- *@old_size: size, in bytes, of the allocated space for ptr 
+ *@old_size: size, in bytes, of the allocated space for ptr
  *@new_size: new size, in bytes, of the new memory block
  *
  *Return: pointer to the reallocated memory block
@@ -29,7 +29,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (new_size == 0)
 	{
-		free (ptr);
+		free(ptr);
 		return (NULL);
 	}
 
@@ -39,7 +39,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	old_ptr = ptr;
 
-	for (i=0; i < old_size && i < new_size; i++)
+	for (i = 0; i < old_size && i < new_size; i++)
 		new_ptr[i] = old_ptr[i];
 
 	free(ptr);
