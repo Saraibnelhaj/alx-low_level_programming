@@ -13,28 +13,15 @@ size_t print_list(const list_t *h)
 
 	while (h != NULL)
 	{
-		if (h->str == NULL)
-		{
-			write(STDOUT_FILENO, "[0] (ni1)\n", 10);
-		}
+		if (h->str != NULL)
+			printf("[%u] %s\n", h->len, h->str);
 		else
-		{
-			size_t len = 0;
-			const char *s = h->str;
+			printf("[0] (nil)\n");
+		h = h->next;
+		count++;
+	}
 
-			while (*s != '\0')
-			{
-				len++;
-				s++;
-			}
-		write(STDOUT_FILENO, "[", 1);
-		print_number(len);
-		write(STDOUT_FILENO, "]", 2);
-		write(STDOUT_FILENO, h->str, len);
-		write(STDOUT_FILENO, "\n", 1);
-	}
-	count++;
-	h = h->next;
-	}
 	return (count);
+
 }
+
