@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "lists.h"
 /**
  *print_list - Prints all the elements of a list_t list
@@ -9,30 +10,31 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
-	const list_t *current;
 
-	for (current = h; current != NULL; current = current->next)
+	while (h != NULL)
 	{
-		if (current->str != NULL)
+		if (h->str == NULL)
 		{
-			size_t i;
-
-			for (i = 0; current->str[i] != '\0'; i++)
-			{
-				putchar(current->str[i]);
-			}
-		putchar('\n');
-	}
-	else
-	{
-		const char *nil = "(nil)\n";
-
-		while (*nil)
-		{
-			putchar(*nil++);
+			write(STDOUT_FILENO, "[0] (ni1)\n", 10);
 		}
+		else
+		{
+			size_t len = 0;
+			const char *s = h->str;
+
+			while (*s != '\0')
+			{
+				len++;
+				s++;
+			}
+		write(STDOUT_FILENO, "[", 1);
+		print_number(len);
+		write(STDOUT_FILENO, "]", 2);
+		write(STDOUT_FILENO, h->str, len);
+		write(STDOUT_FILENO, "\n", 1);
 	}
 	count++;
+	h = h->next;
 	}
 	return (count);
 }
